@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .feedback {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        #answers p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback">
+        <h2>Quiz Result</h2>
+        <div id="answers">
+            <p><strong>Question 1:</strong> Correct Answer: a. transform. The transform property is used to apply 3D transformations to an element.</p>
+            <p><strong>Question 2:</strong> Correct Answer: a. Rotates an element around its X-axis. The rotateX() method rotates an element around its X-axis in 3D space.</p>
+            <p><strong>Question 3:</strong> Correct Answer: b. rotateY(). In CSS 3D transforms, rotateY() method is used to rotate an element along the Y-axis.</p>
+            <p><strong>Question 4:</strong> Correct Answer: c. Translates an element along the Z-axis. The translateZ() method translates an element along the Z-axis in 3D space.</p>
+            <p><strong>Question 5:</strong> Correct Answer: a. Using the perspective property. The perspective property is used to add a perspective view to a 3D converted element in CSS.</p>
+            <p><strong>Question 6:</strong> Correct Answer: a. Scales an element along the X-axis. The scaleX() method scales an element along the X-axis in 3D space.</p>
+            <p><strong>Question 7:</strong> Correct Answer: a. transform-origin. The transform-origin property allows you to change the position of transformed elements in CSS 3D transforms.</p>
+            <p><strong>Question 8:</strong> Correct Answer: a. Using the matrix3d() method. A 4x4 matrix of 16 values can be used to define a 3D transformation using the matrix3d() method in CSS 3D transforms.</p>
+            <p><strong>Question 9:</strong> Correct Answer: a. perspective(). The perspective() method is used to define a perspective view for a 3D transformed element in CSS.</p>
+            <p><strong>Question 10:</strong> Correct Answer: a. Defines whether or not an element should be visible when not facing the screen. The backface-visibility property in CSS 3D transforms defines whether or not an element should be visible when not facing the screen.</p>
+        </div>
+    </div>
+        <script>
+            document.getElementById('quizForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const answers = {
+                    q1: 'a',
+                    q2: 'a',
+                    q3: 'b',
+                    q4: 'c',
+                    q5: 'a',
+                    q6: 'a',
+                    q7: 'a',
+                    q8: 'a',
+                    q9: 'a',
+                    q10: 'a'
+                };
+
+                let score = 0;
+                for (let i = 1; i <= Object.keys(answers).length; i++) {
+                    const question = 'q' + i;
+                    const selectedAnswer = document.querySelector('input[name="' + question + '"]:checked');
+                    if (selectedAnswer) {
+                        if (selectedAnswer.value === answers[question]) {
+                            score++;
+                        }
+                    }
+                }
+                document.getElementById('score').textContent = score + '/' + Object.keys(answers).length;
+                const correctAnswersDiv = document.getElementById('answers');
+                correctAnswersDiv.innerHTML = '';
+                for (let i = 1; i <= Object.keys(answers).length; i++) {
+                    const question = 'q' + i;
+                    const correctAnswer = answers[question];
+                    const explanation = '';
+                    correctAnswersDiv.innerHTML += '<p><strong>Question ' + i + ':</strong> Correct Answer: ' + correctAnswer + '. ' + explanation + '</p>';
+                }
+                document.querySelector('.feedback').style.display = 'block';
+            });
+            </script>
+</body>
+</html>
+

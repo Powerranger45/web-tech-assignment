@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333;
+}
+
+header {
+    background-color: #343a40; /* Dark gray header */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #212529; /* Dark border at the bottom */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+nav a:hover {
+    background-color: #212529; /* Darker background on hover */
+    border-radius: 5px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+    background-color: #fff; /* White background for sections */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+    animation: colorChange 1s linear infinite alternate; /* Animation for color change */
+}
+
+@keyframes colorChange {
+    from {
+        color: rgb(255, 0, 0); /* Starting color: Red */
+    }
+    to {
+        color: rgb(0, 255, 0); /* Ending color: Green */
+    }
+}
+
+h2 {
+    color: #007bff;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #343a40; /* Dark gray footer */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-info {
+    margin: 0;
+    padding-right: 10px;
+}
+.submitted-info {
+    color: #777; /* Color for the submitted info */
+    font-size: 14px; /* Adjust font size as needed */
+    margin-bottom: 10px; /* Add some spacing below the submitted info */
+}

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS 3D Transforms</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  .exercise-container {
+    margin-top: 20px;
+  }
+
+  .exercise {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border: 1px solid black;
+    transition: transform 1s ease; /* Transition duration */
+  }
+
+  .exercise:hover {
+    transform: rotateX(150deg);
+  }
+
+  .exercise-text {
+    text-align: center;
+    margin-top: 5px;
+  }
+h2 {
+    color: #333;
+    margin-top: 30px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  /* Scrollbar Styles */
+  .table-container::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .table-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .table-container::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  .table-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  #example-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  #myDiv {
+    margin: 20px auto;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    background-color: lightblue;
+    border: 1px solid black;
+    transition: transform 0.5s ease;
+  }
+
+  #myDiv:hover {
+    transform: rotateX(150deg);
+  }
+
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+  .container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f0f0f0; /* Light grey background */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
+  }
+
+  .container p {
+    color: #333; /* Dark grey color for text */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  .container ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+  }
+
+  .container ul li {
+    background-color: #fff; /* White background for list items */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 4px;
+    margin-bottom: 8px; /* Spacing between items */
+    padding: 10px;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth background color and transform transition */
+  }
+
+  .container ul li code {
+    background-color: #eee; /* Slightly darker background for the code element */
+    border-radius: 4px;
+    font-family: monospace;
+    padding: 2px 4px;
+  }
+
+  .container ul li:hover {
+    background-color: #e9e9e9; /* Light grey background on hover */
+    transform: translateX(10px); /* Slight move to the right */
+  }
+  .container {
+    text-align: center; /* Align contents to center */
+}
+
+.title {
+    font-size: 36px; /* Adjust font size */
+    color: #333; /* Choose your desired color */
+    padding: 20px 0; /* Add padding for spacing */
+    border-bottom: 2px solid #333; /* Add a bottom border for decoration */
+    display: inline-block; /* Ensure the heading doesn't span the full width */
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>CSS 3D Transforms</h1>
+    <p class="definition">
+        CSS 3D Transforms allow developers to manipulate elements in three-dimensional space using CSS. These transformations include rotation, scaling, and translation along the X, Y, and Z axes, providing a way to create visually engaging effects and immersive user experiences on the web.
+    </p>
+    <p>CSS also supports 3D transformations.</p>
+    <p>Mouse over the elements below to see the difference between a 2D and a 3D transformation:</p>
+    <div class="exercise-container">
+      <div class="exercise"></div>
+      <p class="exercise-text">2D rotate</p>
+    </div>
+    <div class="exercise-container">
+      <div class="exercise"></div>
+      <p class="exercise-text">3D rotate</p>
+    </div>
+    <div class="container">
+        <p><strong>CSS 3D Transforms Methods</strong></p>
+        <p>With the CSS transform property you can use the following 3D transformation methods:</p>
+        <ul>
+          <li><code>rotateX()</code></li>
+          <li><code>rotateY()</code></li>
+          <li><code>rotateZ()</code></li>
+        </ul>
+      </div>
+    <div class="container">
+        <p><strong>The rotateX() Method</strong></p>
+        <p><em>Rotate X</em></p>
+        <p>The <code>rotateX()</code> method rotates an element around its X-axis at a given degree:</p>
+        <div id="example-container">
+            <div id="myDiv">Rotate me!</div>
+            <button onclick="window.open('https://www.w3schools.com/css/tryit.asp?filename=trycss3_transform_rotateX', '_blank')">Try it Yourself</button>
+          </div>
+      </div>
+      <div class="container">
+        <p><strong>The rotateY() Method</strong></p>
+        <p><em>Rotate Y</em></p>
+        <p>The <code>rotateY()</code> method rotates an element around its Y-axis at a given degree:</p>
+        <div id="example-container">
+            <div id="myDiv">Rotate me!</div>
+            <button onclick="window.open('https://www.w3schools.com/css/tryit.asp?filename=trycss3_transform_rotateY')">Try it Yourself</button>
+          </div>
+      </div>
+        <p><strong>The rotateZ() Method</strong></p>
+        <p>The <code>rotateZ()</code> method rotates an element around its Z-axis at a given degree:</p>
+        <div id="example-container">
+            <div id="myDiv">Rotate me!</div>
+            <button onclick="window.open('https://www.w3schools.com/css/tryit.asp?filename=trycss3_transform_rotateZ')">Try it Yourself</button>
+          </div>
+      </div>
+
+    <h2>CSS Transform Properties</h2>
+    <table>
+      <tr>
+        <th>Property</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>transform</td>
+        <td>Applies a 2D or 3D transformation to an element</td>
+      </tr>
+      <tr>
+        <td>transform-origin</td>
+        <td>Allows you to change the position on transformed elements</td>
+      </tr>
+      <tr>
+        <td>transform-style</td>
+        <td>Specifies how nested elements are rendered in 3D space</td>
+      </tr>
+      <tr>
+        <td>perspective</td>
+        <td>Specifies the perspective on how 3D elements are viewed</td>
+      </tr>
+      <tr>
+        <td>perspective-origin</td>
+        <td>Specifies the bottom position of 3D elements</td>
+      </tr>
+      <tr>
+        <td>backface-visibility</td>
+        <td>Defines whether or not an element should be visible when not facing the screen</td>
+      </tr>
+    </table>
+    <h3>CSS 3D Transform Methods</h3>
+    <table>
+      <tr>
+        <th>Function</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)</td>
+        <td>Defines a 3D transformation, using a 4x4 matrix of 16 values</td>
+      </tr>
+      <tr>
+        <td>translate3d(x,y,z)</td>
+        <td>Defines a 3D translation</td>
+      </tr>
+      <tr>
+        <td>translateX(x)</td>
+        <td>Defines a 3D translation, using only the value for the X-axis</td>
+      </tr>
+      <tr>
+        <td>translateY(y)</td>
+        <td>Defines a 3D translation, using only the value for the Y-axis</td>
+      </tr>
+      <tr>
+        <td>translateZ(z)</td>
+        <td>Defines a 3D translation, using only the value for the Z-axis</td>
+      </tr>
+      <tr>
+        <td>scale3d(x,y,z)</td>
+        <td>Defines a 3D scale transformation</td>
+      </tr>
+      <tr>
+        <td>scaleX(x)</td>
+        <td>Defines a 3D scale transformation by giving a value for the X-axis</td>
+      </tr>
+      <tr>
+        <td>scaleY(y)</td>
+        <td>Defines a 3D scale transformation by giving a value for the Y-axis</td>
+      </tr>
+      <tr>
+        <td>scaleZ(z)</td>
+        <td>Defines a 3D scale transformation by giving a value for the Z-axis</td>
+      </tr>
+      <tr>
+        <td>rotate3d(x,y,z,angle)</td>
+        <td>Defines a 3D rotation</td>
+      </tr>
+      <tr>
+        <td>rotateX(angle)</td>
+        <td>Defines a 3D rotation along the X-axis</td>
+      </tr>
+      <tr>
+        <td>rotateY(angle)</td>
+        <td>Defines a 3D rotation along the Y-axis</td>
+      </tr>
+      <tr>
+        <td>rotateZ(angle)</td>
+        <td>Defines a 3D rotation along the Z-axis</td>
+      </tr>
+      <tr>
+        <td>perspective(n)</td>
+        <td>Defines a perspective view for a 3D transformed element</td>
+      </tr>
+    </table>
+  </div>
+  <div class="container">
+    <!-- Previous content -->
+
+    <div class="transform-property">
+      <h4>CSS 3D Transform Properties</h4>
+      <div>
+        <h5>transform</h5>
+        <p>
+          The <code>transform</code> property applies a 2D or 3D transformation to an element. It allows you to modify the appearance and position of the element in the 3D space.
+        </p>
+        <h6>Use Cases:</h6>
+        <ul>
+          <li>Rotating an element in 3D space.</li>
+          <li>Scaling an element in 3D space.</li>
+          <li>Translating an element along the X, Y, or Z-axis.</li>
+        </ul>
+        <h6>Interactive Example:</h6>
+        <div class="example-box" id="exampleTransform"></div>
+      </div>
+    </div>
+
+    <div class="transform-property">
+      <div>
+        <h5>transform-origin</h5>
+        <p>
+          The <code>transform-origin</code> property allows you to change the position of transformed elements. It determines the point around which transformations are applied.
+        </p>
+        <h6>Use Cases:</h6>
+        <ul>
+          <li>Setting the origin of rotation for an element.</li>
+          <li>Changing the point of scaling for an element.</li>
+          <li>Adjusting the origin of translation for an element.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
